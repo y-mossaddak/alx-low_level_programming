@@ -1,23 +1,12 @@
-#include <stdio.h>
-/**
- *_putchar: return putchar
- * main :  point d'entrty
- * description :called _putchar for print the alphabet, in lowercase
- * retur alwayz 0
- */
-
-int _putchar(char c)
+void print_alphabet(void)
 {
-    return putchar(c);
-}
+    char letter = 'a';
 
-int main()
-{
-    char i = 'a';
-    for (; i <= 'z'; i++)
+    while (letter <= 'z')
     {
-        _putchar(i);
+        _putchar(letter);
+        letter++;
     }
+
     _putchar('\n');
-    return 0;
 }

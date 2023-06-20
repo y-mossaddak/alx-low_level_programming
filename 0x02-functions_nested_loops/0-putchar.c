@@ -1,3 +1,10 @@
+#include<stdio.h>
+/**
+ *_putchar: return putchar
+ * main :  point d'entrty
+ * description :called _putchar for print _putchar
+ * retur alwayz 0
+*/
 int _putchar(char c)
 {
     return putchar(c);

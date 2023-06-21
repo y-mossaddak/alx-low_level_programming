@@ -1,25 +1,19 @@
-#include<stdio.h>
+#include "main.h"
 /**
- *_putchar: return putchar
- * main :  point d'entrty
- * description :called _putchar for print _putchar
- * retur alwayz 0
-*/
-int _putchar(char c)
+ *main - print _putchar
+ *
+ *Return: 0 (Success)
+ */
+int main(void)
 {
-    return putchar(c);
+	char letter[] = {95, 112, 117, 116, 99, 104, 97, 114};
+	int i;
+
+	for (i = 0; i < 8; i++)
+	{
+		_putchar(letter[i]);
+	}
+	_putchar('\n');
+	return (0);
 }
 
-int main()
-{
-    _putchar('_');
-    _putchar('p');
-    _putchar('u');
-    _putchar('t');
-    _putchar('c');
-    _putchar('h');
-    _putchar('a');
-    _putchar('r');
-    _putchar('\n');
-    return 0;
-}

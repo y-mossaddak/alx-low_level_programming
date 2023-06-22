@@ -1,6 +1,5 @@
 #include "main.h"
 #include <ctype.h>
-
 /**
  * _isdigit - checks for a digit (0 through 9)
  * @c: character to check
@@ -9,9 +8,9 @@
  */
 int _isdigit(int c)
 {
-    if (isdigit(c) != 0)
-    {
-        return (1);
-    }
-    return (0);
+	if (isdigit(c) != 0)
+	{
+		return (1);
+	}
+	return (0);
 }

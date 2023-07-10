@@ -15,13 +15,11 @@ char *create_array(unsigned int size, char c)
 	char *A = malloc(size * sizeof(char));
 	if (size == 0)
 	{
-		printf("Failed to allocate memory. Size must be greater than zero.\n");
 		return NULL;
 	}
 	
 	if (A == NULL)
 	{
-		printf("Failed to allocate memory.\n");
 		return NULL;
 	}
 
@@ -30,6 +28,6 @@ char *create_array(unsigned int size, char c)
 		i++;
 		A[i] = c;
 	}
-
+	A[size] == '\0';
 	return A;
 }

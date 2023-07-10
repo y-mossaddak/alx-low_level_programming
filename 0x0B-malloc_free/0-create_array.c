@@ -17,14 +17,15 @@ char *create_array(unsigned int size, char c)
 		return NULL;
 	}
 
-	char *A = malloc(size * sizeof(char));
+	char *A; 
+	A = malloc(size * sizeof(char));
 	if (A == NULL)
 	{
 		printf("Failed to allocate memory.\n");
 		return NULL;
 	}
-
-	for (unsigned int i = 0; i < size; i++)
+	unsigned int i = 0;
+	for (i; i < size; i++)
 	{
 		A[i] = c;
 	}

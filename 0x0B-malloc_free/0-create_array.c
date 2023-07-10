@@ -7,7 +7,7 @@
  * @size: space reserved in memory
  * @c: character
  *
- * Returns: address of the reserved memory
+ * Returns: A adress of array value
  */
 char *create_array(unsigned int size, char c)
 {

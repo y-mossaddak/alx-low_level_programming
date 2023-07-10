@@ -11,22 +11,23 @@
  */
 char *create_array(unsigned int size, char c)
 {
+	unsigned int i = 0;
+	char *A = malloc(size * sizeof(char));
 	if (size == 0)
 	{
 		printf("Failed to allocate memory. Size must be greater than zero.\n");
 		return NULL;
 	}
-
-	char *A; 
-	A = malloc(size * sizeof(char));
+	
 	if (A == NULL)
 	{
 		printf("Failed to allocate memory.\n");
 		return NULL;
 	}
-	unsigned int i = 0;
-	for (i; i < size; i++)
+
+	for ( i < size)
 	{
+		i++;
 		A[i] = c;
 	}
 

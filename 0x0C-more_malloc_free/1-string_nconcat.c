@@ -3,16 +3,16 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concat twoo strings
- * @s1: String source 01
- * @s2: String source 02
- *
- * Return: string pointer
+ * string_nconcat - Concatenates two strings up to n characters.
+ * @s1: String source 01.
+ * @s2: String source 02.
+ * @n: Maximum number of characters from s2 to concatenate.
+ * Return: Pointer to the concatenated string, or NULL on failure.
  */
-char *str_concat(char *s1, char *s2)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *new_string;
-	unsigned int i, j, k, limit;
+	char *two_strings;
+	unsigned int i, j, k;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -24,36 +24,41 @@ char *str_concat(char *s1, char *s2)
 
 	for (j = 0; s2[j] != '\0'; j++)
 		;
-	if (n >= j)
-	{
-	two_strings = malloc(sizeof(char)*(i + j + 1);
-        if(two_strings == NULL)
-            {
-			free(two_strings);
-			return (NULL);
-            }
-	}
-	else
-	{
-	two_strings = malloc(sizeof(char) * (i + n + 1));
-	if (two_strings == NULL)
-	{
-		free(two_strings);
-		return (NULL);
-	}
-	}
-	for (k = 0; k < i; k++)
-	two_stringers[k] = s1[k];
 
 	if (n >= j)
 	{
-	for (i = 0; i < j; k++; i++)
-		two_strings[k] = s2[i];
+		two_strings = malloc(sizeof(char) * (i + j + 1));
+		if (two_strings == NULL)
+		{
+			free(two_strings);
+			return (NULL);
+		}
 	}
 	else
 	{
-	for (i = 0; i < n; k++; i++)
-		two_strings[k] = s2[i];
+		two_strings = malloc(sizeof(char) * (i + n + 1));
+		if (two_strings == NULL)
+		{
+			free(two_strings);
+			return (NULL);
+		}
 	}
+
+	for (k = 0; k < i; k++)
+		two_strings[k] = s1[k];
+
+	if (n >= j)
+	{
+		for (i = 0; i < j; k++, i++)
+			two_strings[k] = s2[i];
+	}
+	else
+	{
+		for (i = 0; i < n; k++, i++)
+			two_strings[k] = s2[i];
+	}
+
+	two_strings[k] = '\0';
+
 	return (two_strings);
 }

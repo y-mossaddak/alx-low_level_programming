@@ -4,7 +4,6 @@
 /**
  * malloc_checked - Allocates memory using malloc
  * @b: Size of the memory to allocate
- *
  * Return: Pointer to the allocated memory
  *         Exit with status 98 on failure
  */

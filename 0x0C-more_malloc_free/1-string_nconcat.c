@@ -3,11 +3,10 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - Concatenates two strings up to n characters.
- * @s1: String source 01.
- * @s2: String source 02.
- * @n: Maximum number of characters from s2 to concatenate.
- *
+ * string_nconcat - Concatenates two strings.
+ * @s1: String source 1.
+ * @s2: String source 2.
+ * @n: length of string 2.
  * Return: Pointer to the concatenated string, or NULL on failure.
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -56,4 +55,3 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	return (two_strings);
 }
-

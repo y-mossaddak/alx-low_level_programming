@@ -30,7 +30,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		two_strings = malloc(sizeof(char) * (i + j + 1));
 		if (two_strings == NULL)
 		{
-			free(two_strings);
 			return (NULL);
 		}
 	}
@@ -39,7 +38,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		two_strings = malloc(sizeof(char) * (i + n + 1));
 		if (two_strings == NULL)
 		{
-			free(two_strings);
 			return (NULL);
 		}
 	}

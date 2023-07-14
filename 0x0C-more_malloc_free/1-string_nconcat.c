@@ -27,7 +27,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n >= j)
 	{
-		two_strings = malloc(sizeof(char) * (i + j + 1));
+		two_strings = malloc(sizeof(char) * (i + j));
 		if (two_strings == NULL)
 		{
 			return (NULL);
@@ -35,7 +35,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		two_strings = malloc(sizeof(char) * (i + n + 1));
+		two_strings = malloc(sizeof(char) * (i + n));
 		if (two_strings == NULL)
 		{
 			return (NULL);

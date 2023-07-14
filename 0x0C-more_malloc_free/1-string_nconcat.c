@@ -3,55 +3,47 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - Concatenates two strings.
- * @s1: String source 1.
- * @s2: String source 2.
- * @n: length of string 2.
- * Return: Pointer to the concatenated string, or NULL on failure.
+ * string_nconcat - concat twoo strings
+ * @s1: string 01
+ * @s2: string 02
+ * @n: length string 02
+ * Return: Pointer to the new string.
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *two_strings;
-	unsigned int len_s1 = 0, len_s2 = 0, i, j;
+	char *sout;
+	unsigned int len_s1, ls2, len_sout, i;
 
 	if (s1 == NULL)
 		s1 = "";
+
 	if (s2 == NULL)
 		s2 = "";
 
-	while (s1[len_s1] != '\0')
-		len_s1++;
-	while (s2[len_s2] != '\0')
-		len_s2++;
+	for (len_s1 = 0; s1[len_s1] != '\0'; len_s1++)
+		;
 
-	if (n >= len_s2)
-	{
-		two_strings = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
-		if (two_strings == NULL)
-			return (NULL);
-	}
-	else
-	{
-		two_strings = malloc(sizeof(char) * (len_s1 + n + 1));
-		if (two_strings == NULL)
-			return (NULL);
-	}
+	for (ls2 = 0; s2[ls2] != '\0'; ls2++)
+		;
 
-	for (i = 0; i < len_s1; i++)
-		two_strings[i] = s1[i];
+	if (n > ls2)
+		n = ls2;
 
-	if (n >= len_s2)
-	{
-		for (j = 0; j < len_s2; j++, i++)
-			two_strings[i] = s2[j];
-	}
-	else
-	{
-		for (j = 0; j < n; j++, i++)
-			two_strings[i] = s2[j];
-	}
+	len_sout = len_s1 + n;
 
-	two_strings[i] = '\0';
+	sout = malloc(len_sout + 1);
 
-	return (two_strings);
+	if (sout == NULL)
+		return (NULL);
+
+	for (i = 0; i < len_sout; i++)
+		if (i < len_s1)
+			sout[i] = s1[i];
+		else
+			sout[i] = s2[i - len_s1];
+
+	sout[i] = '\0';
+
+	return (sout);
 }

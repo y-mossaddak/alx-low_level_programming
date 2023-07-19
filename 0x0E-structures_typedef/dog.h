@@ -1,12 +1,17 @@
-#include <stdio.h>
+#ifndef DOG_H
+#define DOG_H
 
-int main()
+/**
+ * struct dog - Structure representing a dog
+ * @name: Pointer to a character array for the dog's name
+ * @age: Age of the dog
+ * @owner: Pointer to a character array for the dog's owner
+ */
+struct dog
 {
-	struct dog
-	{
-		char *name;
-		float age;
-		char *owner;
-	};
-	return(0);
-}
+	char *name;
+	float age;
+	char *owner;
+};
+
+#endif

@@ -4,6 +4,7 @@
 /**
  * sum_them_all - Calculate the sum of a variable number of integers.
  * @n: The number of integers to be summed.
+ * @...: the integers tou sum.
  * Return: The sum of all the integers.
  */
 int sum_them_all(const unsigned int n, ...)

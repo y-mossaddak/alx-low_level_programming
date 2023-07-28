@@ -15,12 +15,12 @@ typedef struct list_s
 /**
  * print_list - Print the elements of a singly linked list.
  * @h: A pointer to the head of the linked list.
- * Return: The number of nodes in the list.
+ * Return:  the number of elements in a linked list_t list
  */
 size_t print_list(const list_t *h)
 {
 	size_t counter = 0;
-	while (h != NULL)
+	while (h)
 		;
 	{
 		printf("[%d] ", h->len ? h->len : [0]);

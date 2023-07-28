@@ -1,39 +1,40 @@
 #include "lists.h"
 /**
- * add_node_end - add node to the end of the list
- * @head:list head
- * @str: string to be dupplicated
- * Return: the head
+ * _str_len - calc the length of string
+ * @str: string to be calculated
+ * Return: int length of string
  */
-list_t *add_node_end(list_t **head, const char *str)
+int _str_len(char *str)
 {
-	list_t *new_node;
-	list_t *temp;
-	size_t nchar;
+	if (!*str)
+		return (0);
+	return (1 + _str_len(str + 1));
+}
 
-	new_node = malloc(sizeof(list_t));
-	if (new_node == NULL)
+/**
+ * add_node - add node to the liste
+ * @head:liste head
+ * @str:string to be dupplicated
+ * Return:the new head
+ */
+list_t *add_node(list_t **head, const char *str)
+{
+	char *str_ptr = (char *) strdup(str);
+	list_t *new_node;
+
+	if (!str_ptr)
 		return (NULL);
 
-	new_node->str = strdup(str);
+	new_node = (list_t *)malloc(sizeof(list_t));
 
-	for (nchar = 0; str[nchar]; nchar++)
-		;
+	if (!new_node)
+		return (NULL);
 
-	new_node->len = nchar;
-	new_node->next = NULL;
-	temp = *head;
+	new_node->str = str_ptr;
+	new_node->len = _str_len(str_ptr);
+	new_node->next = *head;
 
-	if (temp == NULL)
-	{
-		*head = new_node;
-	}
-	else
-	{
-		while (temp->next != NULL)
-			temp = temp->next;
-		temp->next = new_node;
-	}
+	*head = new_node;
 
 	return (*head);
 }

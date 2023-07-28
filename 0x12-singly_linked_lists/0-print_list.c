@@ -8,7 +8,6 @@ size_t print_list(const list_t *h)
 {
 	size_t counter = 0;
 	while (h)
-		;
 	{
 		printf("[%d] ", h->len ? h->len : [0]);
 		printf("%s\n", h->str ? h->str : "(nil)");

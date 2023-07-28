@@ -1,8 +1,4 @@
 #include "lists.h"
-
-/**
- * list_len - Return the number of elements in a singly linked list.
- * @h: A pointer to the head of the linked list.
 /**
  * add_node_end - Add a new node at the end of the linked list.
  * @head: Pointer to the head of the linked list.
@@ -25,11 +21,8 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new_node);
 		return NULL;
 	}
-
 	new_node->len = strlen(str);
-
 	new_node->next = NULL;
-
 	if (*head == NULL)
 	{
 		*head = new_node;
